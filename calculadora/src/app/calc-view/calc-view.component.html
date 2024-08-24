@@ -1,0 +1,20 @@
+
+    <div class="calculadora">
+      <h2>Calculadora</h2>
+  
+      <label for="valor1">Valor 1:</label>
+      <input type="number" [(ngModel)]="valor1" placeholder="Número 1" />
+  
+      <label for="valor2">Valor 2:</label>
+      <input type="number" [(ngModel)]="valor2" placeholder="Número 2" />
+  
+      <label for="resultado">Resultado:</label>
+      <input [value]="resultado" disabled/>
+  
+      <app-calc-actions
+        [valor1]="valor1"
+        [valor2]="valor2"
+        (resultado)="actualizarResultado($event)"
+        (limpiarInputs)="limpiarValores()">
+      </app-calc-actions>
+    </div>
